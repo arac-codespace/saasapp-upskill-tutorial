@@ -13,7 +13,7 @@ $(document).on('turbolinks:load', function(){
     
     //Prevent default submission behavior
     event.preventDefault();
-    submitBtn.prop('disable', true).val("Processing");
+    submitBtn.val("Processing").prop('disabled',true);
     
     // Collect card fields
     var ccNum = $('#card_number').val(),
@@ -56,15 +56,17 @@ $(document).on('turbolinks:load', function(){
         exp_year: expYear
       }, stripeResponseHandler);
     }
+    return false;
+    
  });
- 
  
    // Stripe will return a card token.
   function stripeResponseHandler(status,response) {
+    // Get the token from the response
     var token = response.id; 
     
-    //Inject card token as hidden field
-    theForm.append($('<input="hidden" name="user[stripe_card_token]">').val(token));
+    //Inject card token in a hidden field
+    theForm.append( $('<input type="hidden" name="user[stripe_card_token]">').val(token));
     
     // Submit form to Rails app.
     theForm.get(0).submit();
