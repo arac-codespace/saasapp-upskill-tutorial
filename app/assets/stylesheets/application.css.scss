@@ -41,8 +41,17 @@ h1,h2,h3 {
     padding-bottom: 100px;
 }
 
-.alert-notice {
-    display: none;
+.alert-notice, .alert-alert {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    margin-top: -14px;
+    text-align: center;
+   
+}
+
+.flash-container {
+    position: absolute;
+    width: 100%;
 }
 
 .home-signup-links {
@@ -81,3 +90,4 @@ h1,h2,h3 {
 .navbar-default .navbar-toggle:focus {
     background-color: #55b3cf;
 }
+
