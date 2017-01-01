@@ -1,5 +1,7 @@
 class ProfilesController < ApplicationController
-
+    before_action :authenticate_user! #Devise method prevents unregistered users from using any of the ProfilesController functionalities
+    before_action :only_current_user # Self-made function defined at the private section
+    
     # GET users/:user_id/profile/new
     def new
     #Renders blank profile form
@@ -46,5 +48,10 @@ class ProfilesController < ApplicationController
     private
         def profile_params
             params.require(:profile).permit(:first_name, :last_name, :avatar, :job_title, :phone_number, :contact_email, :description)
+        end
+        
+        def only_current_user
+            @user = User.find(params[:user_id])
+            redirect_to(root_url) unless @user == current_user #(Devise method)
         end
 end
