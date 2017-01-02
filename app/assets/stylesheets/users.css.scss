@@ -1,18 +1,22 @@
+// CSS for the avatar show in user profile
 .avatar-show-img {
     width: 128px;
     height: 128px;
 }
 
-.job-tittle-icon {
+// CSS for the icon next to the job title
+.job-title-icon {
     display: inline-block;
     width: 30px;
     height: 30px;
-    border: 2px solid #236da4;
+    border: 2px solid #2e6da4;
     border-radius: 4px;
     background: #337ab7;
     color: white;
     text-align: center;
 }
+
+
 .well.profile-block {
     color: white;
     h3 {
@@ -31,3 +35,13 @@
     border-color: #46b8da;
 }
 
+// User Index Page Style
+.user-index-avatar {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+}
+
+.well.white-bg {
+    background-color: white;
+}

@@ -6,7 +6,9 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end
     
-    def index
     
+    # .includes will combine the users and profiles table into one query for optimization.
+    def index
+        @users = User.includes(:profile)
     end
 end
