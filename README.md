@@ -1,2 +1,4 @@
 [Upskill](http://upskillcourses.com) Software-as-a-Service on Rails App
-Is this free advertisement? I'll find out soon enough.
+
+
+Tutorial deals with the basics of rails development and delves briefly into e-commerce using Stripe as the payment proccessing gem.
